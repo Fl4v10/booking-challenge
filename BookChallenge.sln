@@ -5,9 +5,7 @@ VisualStudioVersion = 16.0.31229.75
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookChallenge", "BookChallenge\BookChallenge.csproj", "{D7A6D50C-BB5B-4C60-ABB5-F631EBC79F4F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookChallenge.Test", "BookChallenge.Test\BookChallenge.Test.csproj", "{0BE104C5-BB6E-4D35-8EEC-ADB217475C4D}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookChallengeTests", "BookChallengeTests\BookChallengeTests.csproj", "{2F6E5631-F465-4167-8781-FC14A80D9A5A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookChallengeTests", "BookChallengeTests\BookChallengeTests.csproj", "{2F6E5631-F465-4167-8781-FC14A80D9A5A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +17,6 @@ Global
 		{D7A6D50C-BB5B-4C60-ABB5-F631EBC79F4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7A6D50C-BB5B-4C60-ABB5-F631EBC79F4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D7A6D50C-BB5B-4C60-ABB5-F631EBC79F4F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0BE104C5-BB6E-4D35-8EEC-ADB217475C4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0BE104C5-BB6E-4D35-8EEC-ADB217475C4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0BE104C5-BB6E-4D35-8EEC-ADB217475C4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0BE104C5-BB6E-4D35-8EEC-ADB217475C4D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2F6E5631-F465-4167-8781-FC14A80D9A5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2F6E5631-F465-4167-8781-FC14A80D9A5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F6E5631-F465-4167-8781-FC14A80D9A5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
