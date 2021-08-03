@@ -30,7 +30,7 @@ namespace BookChallenge
             services.AddDbContext<BookingChallengeContext>(opt =>
                opt.UseInMemoryDatabase("BookingChallenge"));
 
-            services.AddSingleton<IBookingRepository, BookingRepository>();
+            services.AddScoped<IBookingRepository, BookingRepository>();
 
             services.AddControllers()
                 .AddFluentValidation(fv => {
@@ -49,7 +49,7 @@ namespace BookChallenge
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
+            app.UseDeveloperExceptionPage();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

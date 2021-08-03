@@ -38,7 +38,7 @@ namespace BookChallenge.Controllers
             }
         }
         
-        [HttpGet]
+        [HttpGet("CheckAvailebleDates")]
         public IActionResult CheckAvailebleDates(DateTime from, DateTime to)
         {
             try

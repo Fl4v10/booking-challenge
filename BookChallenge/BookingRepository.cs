@@ -56,7 +56,7 @@ namespace BookChallenge
 
         public bool CheckRoomAvaibility(DateTime from, DateTime to)
         {
-            return _context.Bookings.Any(x => x.Start.Date >= from.Date && x.End.Date <= to.Date);
+            return !_context.Bookings.Any(x => x.Start.Date >= from.Date && x.End.Date <= to.Date);
         }
 
         public async Task<Booking> Save(Booking booking)
