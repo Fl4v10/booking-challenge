@@ -74,7 +74,7 @@ namespace BookChallenge
             _booking.Start = booking.Start;
             _booking.End = booking.End;
 
-            _context.Bookings.Add(booking);
+            _context.Bookings.Update(booking);
             await _context.SaveChangesAsync();
 
             return booking;
