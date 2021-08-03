@@ -7,7 +7,7 @@ namespace BookChallenge
 {
     public class BookingValidator : AbstractValidator<Booking>
     {
-        public BookingValidator()
+        public BookingValidator(IBookingRepository bookingRepository)
         {
             RuleFor(b => b.CustomerName).NotNull().NotEmpty();
 
@@ -23,10 +23,12 @@ namespace BookChallenge
                 .WithMessage("The stay can’t be reserved more than 30 days in advance!");
 
             RuleFor(b => b)
-                 .Must(m => {
-                     return (m.End - m.Start).TotalDays <= 3;
-                     })
+                 .Must(m => (m.End - m.Start).TotalDays <= 3)
                 .WithMessage("The stay can’t be longer than 3 days!");
+            
+            RuleFor(b => b)
+                 .Must(m => bookingRepository.CheckRoomAvaibility(m.Start, m.End))
+                .WithMessage("Unavailable dates!");
         }
     }
 }

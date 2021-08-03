@@ -129,3 +129,5 @@ C:\Repositories\booking-challenge\BookChallengeTests\obj\Debug\.netcoreapp,versi
 C:\Repositories\booking-challenge\BookChallengeTests\obj\Debug\.netcoreapp,version=v3.1\BookChallengeTests.dll
 C:\Repositories\booking-challenge\BookChallengeTests\obj\Debug\.netcoreapp,version=v3.1\BookChallengeTests.pdb
 C:\Repositories\booking-challenge\BookChallengeTests\obj\Debug\.netcoreapp,version=v3.1\BookChallengeTests.genruntimeconfig.cache
+C:\Repositories\booking-challenge\BookChallengeTests\bin\Debug\.netcoreapp,version=v3.1\Castle.Core.dll
+C:\Repositories\booking-challenge\BookChallengeTests\bin\Debug\.netcoreapp,version=v3.1\Moq.dll

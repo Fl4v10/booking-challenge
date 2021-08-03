@@ -17,7 +17,7 @@ namespace BookChallenge
     public interface IGetBookingRepository
     {
         Task<Booking> Get(int id);
-        bool CheckRoomAvaiability(DateTime from, DateTime to);
+        bool CheckRoomAvaibility(DateTime from, DateTime to);
     }
 
     public interface IBookingRepository : IGetBookingRepository, ISaveBookingRepository, IDeleteBookingRepository
@@ -54,7 +54,7 @@ namespace BookChallenge
             return await _context.Bookings.FindAsync(id);
         }
 
-        public bool CheckRoomAvaiability(DateTime from, DateTime to)
+        public bool CheckRoomAvaibility(DateTime from, DateTime to)
         {
             return _context.Bookings.Any(x => x.Start.Date >= from.Date && x.End.Date <= to.Date);
         }

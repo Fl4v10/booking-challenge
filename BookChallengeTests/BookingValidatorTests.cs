@@ -5,16 +5,19 @@ using System.Collections.Generic;
 using System.Text;
 using BookChallenge.Models;
 using FluentValidation.TestHelper;
+using Moq;
 
 namespace BookChallenge.Tests
 {
     public class BookingValidatorTests
     {
+        private readonly Mock<IBookingRepository> _repositoryMock;
         private readonly BookingValidator _validator;
 
         public BookingValidatorTests()
         {
-            _validator = new BookingValidator();
+            _repositoryMock = new Mock<IBookingRepository>();
+            _validator = new BookingValidator(_repositoryMock.Object);
         }
         
         [Fact()]
@@ -105,6 +108,9 @@ namespace BookChallenge.Tests
         [Fact()]
         public void Should_not_have_error_when_booking_last_2d()
         {
+            _repositoryMock.Setup(s => s.CheckRoomAvaibility(It.IsAny<DateTime>(), It.IsAny<DateTime>()))
+                .Returns(true);
+
             var startDate = DateTime.Today.AddDays(10);
             var model = new Booking { 
                 CustomerName = "fooBar",
@@ -115,6 +121,24 @@ namespace BookChallenge.Tests
             var actual = _validator.TestValidate(model);
 
             actual.ShouldNotHaveValidationErrorFor(s => s);
+        }
+
+        [Fact()]
+        public void Should_have_error_when_dates_are_not_availeble()
+        {
+            _repositoryMock.Setup(s => s.CheckRoomAvaibility(It.IsAny<DateTime>(), It.IsAny<DateTime>()))
+                .Returns(false);
+
+            var startDate = DateTime.Today.AddDays(10);
+            var model = new Booking { 
+                CustomerName = "fooBar",
+                Start = startDate,
+                End = startDate.AddDays(2).AddHours(4)
+            };
+
+            var actual = _validator.TestValidate(model);
+
+            actual.ShouldHaveValidationErrorFor(s => s);
         }
     }
 }

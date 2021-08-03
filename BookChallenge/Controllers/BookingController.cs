@@ -43,7 +43,7 @@ namespace BookChallenge.Controllers
         {
             try
             {
-                return Ok(_bookingRepository.CheckRoomAvaiability(from, to));
+                return Ok(_bookingRepository.CheckRoomAvaibility(from, to));
             }
             catch (Exception ex)
             {
